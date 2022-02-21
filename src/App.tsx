@@ -1,15 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import useScreen from './custom-hook/useScreen';
+import { ThemeProvider } from './useReduce/ThemeContext';
+import FComponent from './useReduce/FComponent';
 
 function App() {
   const screen = useScreen();
   return (
     <div className="App">
       <h1>
-        {screen}
-        </h1>
+        ScreenSize :{screen}
+      </h1>
+      <ThemeProvider>
+        <FComponent />
+      </ThemeProvider>
     </div>
   );
 }
